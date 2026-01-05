@@ -6,11 +6,29 @@
     </head>
     <body>
         <h1 style="text-align: center;" > <u> Learning about html forms and elements</u> </h1>
-        <form> 
+        
+        <form action="/index.html" target="_blank" novalidate> 
             <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname" placeholder="your first name"><br>
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname" placeholder="your last name"><br>
+  <label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor"><br>
+  <label for="birthdaytime" for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday" required><br>
+  <label for="birthdaytime">Birthday (date and time):</label>
+  <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email" required ><br>
+   <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile"><br>
+  <label for="number">phone number:</label><br>
+  <input type="image" src="image/neymarrr.jpeg" alt="Submit" width="48" height="48">
+  <input type="number" id="phone number" name="phone number" min="1" max="9"><br>
+  <label for="search">Search Google:</label>
+  <input type="search" id="search" name="search"><br>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
   <p>I am learning about following course:</p>
   <input type="radio" id="html" name="my course" value="html">
   <label for="html">HTML</label><br>
@@ -26,7 +44,19 @@
   <label> I have Rolls Royce </label><br>
   <input type="checkbox" id="Rolls Royce" name="belongings">
   <label> I have BMW</label> <br> <br>
-  <input type="submit" value="submit">
+  <label for="cars">choose a car</label>
+  <select id="cars" name="cars" size="5" multiple>
+    <option value="rr">RR</option>
+    <option value="supra">Supra</option>
+    <option value="benz g class">Benz G Class</option>
+    <option value="thar" selected>Thar</option>
+    <Option value="rubicon">Rubicon</Option>
+  </select>
+  <h4>write your feedback here</h4> 
+  <textarea placeholder="your feedback here" id="feedback" name="feedback" rows="4" cols="50"> </textarea>
+   <button type="button" onclick="alert('Read again,yet completed')">thich yeta!</button><br>
+   <input type="submit" value="submit"><br>
+  
          </form>
          
     </body>
