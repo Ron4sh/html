@@ -3,7 +3,7 @@
     <head>
         <title> about htmlapi</title>
         <body>
-            <h1 style="text-align: center;" >learning about html api</h1>
+          <h1 style="text-align: center;" >learning about html api</h1> 
             <h2>html geolocation</h2>
             <p>click the button to get your location</p>
             <button onclick="geolocation()">fetch location</button>
@@ -39,6 +39,20 @@
       x.innerHTML = "An unknown error occurred."
       break;
   }
+}
+            </script>
+            <script>
+              <div id="redsult"> </div>
+                const x = document.getElementById("result");
+if (typeof(Storage) !== "undefined")
+localstorage.setItem("name","Ronish")
+localstorage.setItem("bgcolor","blue")
+localstorage.setItem("lastname","nepal")
+x.innerHTML = ""
+ else {
+  x.innerHTML = localStorage.getItem("lastname");
+
+
 }
             </script>
         </body>
