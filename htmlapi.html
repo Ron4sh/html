@@ -3,12 +3,12 @@
     <head>
         <title> about htmlapi</title>
         <body>
-          <h1 style="text-align: center;" >learning about html api</h1> 
+          <!--<h1 style="text-align: center;" >learning about html api</h1> 
             <h2>html geolocation</h2>
             <p>click the button to get your location</p>
             <button onclick="geolocation()">fetch location</button>
-            <p id="coordinates"></p>
-            <script>
+            <p id="coordinates"></p> 
+             <script>
                 const x = document.getElementById("coordinates")
                 function geolocation(){
                     if (navigator.geolocation){
@@ -40,21 +40,71 @@
       break;
   }
 }
-            </script>
-            <script>
-              <div id="redsult"> </div>
-                const x = document.getElementById("result");
-if (typeof(Storage) !== "undefined")
-localstorage.setItem("name","Ronish")
-localstorage.setItem("bgcolor","blue")
-localstorage.setItem("lastname","nepal")
-x.innerHTML = ""
- else {
+            </script> -->
+            
+<div id="result"></div>
+
+<script>
+const x = document.getElementById("result");
+
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Nepal");
+  localStorage.setItem("bgcolor","Blue");
+  // Retrieve
   x.innerHTML = localStorage.getItem("lastname");
-
-
+  x.style.backgroundColor = localStorage.getItem("bgcolor");
+} else {
+  x.innerHTML = "Sorry, no Web storage support!";
 }
-            </script>
+</script>
+            <script>
+function clickCounter() {
+  const z = document.getElementById("clickcount");
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    z.innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s)!";
+  } else {
+    z.innerHTML = "Sorry, no Web storage support!";
+  }
+}
+</script>
+
+
+<h1>localStorage</h1>
+
+<button onclick="clickCountersession()" type="button">Click me!</button>
+<p id="clickCountersession"></p>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count.</p>
+<script>
+function clickCountersession() {
+  const x = document.getElementById("result");
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    b.innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session!";
+  } else {
+    b.innerHTML = "Sorry, no Web storage support!";
+  }
+}
+</script>
+
+
+<h1>sessionStorage</h1>
+
+<button onclick="clickCountersession()" type="button">Click me!</button>
+<p id="result"></p>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
         </body>
     </head>
 </html>
